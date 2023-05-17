@@ -1,0 +1,50 @@
+{
+  "name": "BanditLsdtSwap-fe",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "license": "GPL-3.0",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "lint": "eslint",
+    "format": "prettier .  --write"
+  },
+  "dependencies": {
+    "@emotion/react": "^11.10.5",
+    "@emotion/styled": "^11.10.5",
+    "@fortawesome/fontawesome-free": "^6.3.0",
+    "@mui/icons-material": "^5.11.0",
+    "@mui/material": "^5.11.8",
+    "@mui/system": "^5.11.8",
+    "@walletconnect/web3-provider": "^1.8.0",
+    "@web3-react/core": "^6.1.9",
+    "@web3-react/metamask": "^8.0.30-beta.0",
+    "@web3-react/network": "^8.0.0-beta.0",
+    "@web3-react/walletconnect-connector": "^6.2.13",
+    "@web3modal/ethereum": "^2.2.0",
+    "@web3modal/react": "^2.2.0",
+    "ethereum-blockies-base64": "1.0.2",
+    "ethers": "^5",
+    "lodash": "^4.17.21",
+    "match-sorter": "^6.3.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.8.1",
+    "react-window": "^1.8.8",
+    "wagmi": "^0.12.1"
+  },
+  "devDependencies": {
+    "@emotion/babel-plugin": "^11.10.5",
+    "@vitejs/plugin-react": "^3.1.0",
+    "eslint": "^8.33.0",
+    "eslint-config-prettier": "^8.6.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-react": "^7.32.2",
+    "prettier": "^2.8.4",
+    "prettier-eslint": "^15.0.1",
+    "vite": "^4.1.0",
+    "vite-plugin-eslint": "^1.8.1"
+  }
+}
