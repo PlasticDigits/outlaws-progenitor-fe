@@ -7,12 +7,12 @@ const TxStatus = ({ isLoading, isSuccess, isError, txHash, errMsg }) => {
       <Typography
         color={
           isLoading
-            ? 'cyan'
+            ? 'black'
             : isSuccess
-            ? 'lime'
+            ? 'black'
             : isError
-            ? 'magenta'
-            : 'neutral'
+            ? 'black'
+            : 'black'
         }
         variant="body2"
         css={{ minHeight: 22 }}
@@ -23,7 +23,7 @@ const TxStatus = ({ isLoading, isSuccess, isError, txHash, errMsg }) => {
             Transaction Submitted:
             <Typography
               as="a"
-              color="cyan"
+              color="black"
               target="_blank"
               href={'https://bscscan.com/tx/' + txHash}
             >
