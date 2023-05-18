@@ -31,7 +31,7 @@ export default function OutlawMinter({ nftId }) {
 
   const { metadata } = useOutlawMetadata(nftId);
 
-  const startTimer = useCountdown(1684458000, 'OPEN');
+  const startTimer = useCountdown(1684476000, 'OPEN');
 
   const {
     data: banditBalData,
