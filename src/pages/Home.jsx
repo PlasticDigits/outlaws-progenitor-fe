@@ -141,7 +141,7 @@ export default function Home() {
         </Typography>
 
         <Typography
-          as="p"
+          as="div"
           sx={{
             color: '663810',
             WebkitTextStroke: '1px #663810',
