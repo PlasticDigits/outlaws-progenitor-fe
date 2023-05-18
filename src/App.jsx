@@ -20,7 +20,7 @@ const wagmiClient = createClient({
   autoConnect: true,
   connectors: w3mConnectors({
     version: 2,
-    appName: 'BanditLsdtSwap',
+    appName: 'Outlaw Progenitors',
     chains,
     projectId,
   }),
