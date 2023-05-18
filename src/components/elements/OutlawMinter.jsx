@@ -1,7 +1,7 @@
 import { useTheme } from '@emotion/react';
 import { Button, Typography } from '@mui/material';
 import { Box } from '@mui/system';
-import { constants } from 'ethers';
+import { BigNumber, constants } from 'ethers';
 import { parseEther } from 'ethers/lib/utils.js';
 import {
   useAccount,
