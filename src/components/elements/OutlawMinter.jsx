@@ -85,6 +85,9 @@ export default function OutlawMinter({ nftId }) {
     abi: OutlawsProgenitorMintAbi,
     functionName: 'mint',
     args: [],
+    overrides: {
+      gasLimit: 200000,
+    },
   });
   const {
     data: dataMintOutlaw,
