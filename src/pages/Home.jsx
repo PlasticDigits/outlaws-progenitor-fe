@@ -170,7 +170,6 @@ export default function Home() {
                   display: 'inline-block',
                   backgroundImage: "url('./images/plank 1 1.png')",
                   maxWidth: '540px',
-                  width: '90vw',
                   color: 'white',
                   WebkitTextStroke: '1px black',
                 }}
