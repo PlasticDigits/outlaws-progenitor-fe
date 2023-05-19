@@ -220,7 +220,7 @@ export default function OutlawMinter({ nftId }) {
           )}
         </Box>
       </Box>
-      <Box>
+      <Box sx={{ color: '#6E1C1C' }}>
         Approve Status:{' '}
         {banditAllowance?.gte(banditBal ?? BigNumber.from(0)) ? (
           <Typography as="span" sx={{ color: 'black' }}>

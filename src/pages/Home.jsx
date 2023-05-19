@@ -1,6 +1,7 @@
 import { useTheme } from '@emotion/react';
 import { Typography } from '@mui/material';
 import Box from '@mui/material/Box';
+import Grid from '@mui/material/Unstable_Grid2'; // Grid version 2
 import { parseEther } from 'ethers/lib/utils.js';
 import { useAccount, useBalance, useContractRead } from 'wagmi';
 import IERC20Abi from '../abi/IERC20.json';
@@ -83,8 +84,7 @@ export default function Home() {
         <Typography
           as="h2"
           sx={{
-            color: 'white',
-            WebkitTextStroke: '1px #663810',
+            color: '#6E1C1C',
             fontSize: 48,
             paddingTop: 4,
           }}
@@ -108,62 +108,85 @@ export default function Home() {
               <OutlawDisplay key={val.toString()} nftId={val.toString()} />
             ))}
         </Box>
-
-        <Typography
-          as="h2"
+        <Grid
+          container
+          spacing={1}
           sx={{
-            color: 'white',
-            WebkitTextStroke: '1px #663810',
-            fontSize: 48,
-            paddingTop: 4,
-            lineHeight: 1,
-            marginTop: '100px',
+            justifyContent: 'center',
+            alignItems: 'center',
+            padding: { xs: 2, md: 5 },
+            flexFlow: { xs: 'column-reverse', md: 'row' },
           }}
         >
-          UNLEASH THE BANDIT WITHIN
-          <br />
-          <Typography
-            as="span"
-            sx={{
-              color: '#663810',
-              WebkitTextStroke: '1px #663810',
-              fontSize: 48,
-              lineHeight: 1,
-            }}
-          >
-            AND MAXIMIZE YOUR GAINS!
-          </Typography>
-          <Box
-            as="img"
-            src="./images/GUY GIEL 1.png"
-            sx={{ maxWidth: '80vw', float: 'left' }}
-          />
-        </Typography>
+          <Grid xs={12} md={6} sx={{ textAlign: 'right' }}>
+            <Box
+              as="img"
+              src="./images/GUY GIEL 1.png"
+              sx={{ maxWidth: '100%' }}
+            />
+          </Grid>
+          <Grid xs={12} md={6}>
+            <Typography
+              as="h2"
+              sx={{
+                color: '#6E1C1C',
+                fontSize: 36,
+                paddingTop: 4,
+                lineHeight: 1,
+                marginTop: '100px',
+                textAlign: 'left',
+              }}
+            >
+              UNLEASH THE BANDIT WITHIN
+              <br />
+              <Typography
+                as="span"
+                sx={{
+                  color: 'black',
+                  fontSize: 36,
+                  lineHeight: 1,
+                }}
+              >
+                AND MAXIMIZE YOUR GAINS!
+              </Typography>
+            </Typography>
 
-        <Typography
-          as="div"
-          sx={{
-            color: '663810',
-            WebkitTextStroke: '1px #663810',
-            fontSize: 28,
-            paddingTop: 4,
-            lineHeight: 1,
-            paddingBottom: '200px',
-            textAlign: 'left',
-          }}
-        >
-          BUILD YOUR GANG OF OUTLAWS TO GET HEIST POWER BONUSES.
-          <br />
-          CHOOSE YOUR PERSONALITIES WISELY!
-          <ul>
-            <li>1 OUTLAW: 25% Bonus</li>
-            <li>PAIR (2 SAME PERSONALITY): 50% Bonus</li>
-            <li>3 OF A KIND: 100% Bonus</li>
-            <li>4 OF A KIND: 200% Bonus</li>
-            <li>STRAIGHT (5 DIFFERENT PERSONALITIES): 400% Bonus</li>
-          </ul>
-          <br />
-        </Typography>
+            <Typography
+              as="div"
+              sx={{
+                color: '#6E1C1C',
+                fontSize: { xs: 16, md: 28 },
+                paddingTop: 4,
+                lineHeight: 1,
+                paddingBottom: '200px',
+                textAlign: 'left',
+              }}
+            >
+              BUILD YOUR GANG OF OUTLAWS TO GET HEIST POWER BONUSES.
+              <br />
+              CHOOSE YOUR PERSONALITIES WISELY!
+              <Box
+                sx={{
+                  display: 'inline-block',
+                  backgroundImage: "url('./images/plank 1 1.png')",
+                  maxWidth: '540px',
+                  width: '90vw',
+                  color: 'white',
+                  WebkitTextStroke: '1px black',
+                }}
+              >
+                <ul>
+                  <li>1 OUTLAW: 25% Bonus</li>
+                  <li>PAIR (2 SAME PERSONALITY): 50% Bonus</li>
+                  <li>3 OF A KIND: 100% Bonus</li>
+                  <li>4 OF A KIND: 200% Bonus</li>
+                  <li>STRAIGHT (5 DIFFERENT PERSONALITIES): 400% Bonus</li>
+                </ul>
+              </Box>
+              <br />
+            </Typography>
+          </Grid>
+        </Grid>
       </Box>
       <FooterArea sx={{ zIndex: 4, position: 'relative' }} />
     </>
