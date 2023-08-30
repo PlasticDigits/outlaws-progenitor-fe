@@ -19,6 +19,7 @@ import {
 import { OUTLAW_PERSONALITIES } from '../../constants/textLoopups';
 import useCountdown from '../../hooks/useCountdown';
 import useOutlawMetadata from '../../hooks/useOutlawMetadata';
+import { bnToCompact } from '../../utils/bnToFixed';
 import { getIpfsUrl } from '../../utils/getIpfsJson';
 import TxStatus from './TxStatus';
 
@@ -250,6 +251,18 @@ export default function OutlawMinter({ nftId }) {
           txHash={dataMintOutlaw?.hash}
           errMsg={errorMintOutlaw?.message}
         />
+        <br />
+        Your Bandit Balance:{' '}
+        <Typography>
+          {bnToCompact(banditBal, 18, 5)}
+          {banditBal?.lt(parseEther((50 + Number(nftId) * 2).toString())) ? (
+            <Box sx={{ color: 'red' }}> ❌ NOT ENOUGH BANDITS</Box>
+          ) : (
+            <Box sx={{ color: 'green' }}> ✅ READY TO MINT</Box>
+          )}
+          <br />
+          (Current mint cost: {(50 + Number(nftId) * 2).toString()} Bandits)
+        </Typography>
       </Box>
     </>
   );
