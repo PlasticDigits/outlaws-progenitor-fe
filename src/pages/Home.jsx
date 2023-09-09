@@ -7,7 +7,6 @@ import { useAccount, useBalance, useContractRead } from 'wagmi';
 import IERC20Abi from '../abi/IERC20.json';
 import IERC721EnumerableAbi from '../abi/IERC721Enumerable.json';
 import OutlawDisplay from '../components/elements/OutlawDisplay';
-import OutlawMinter from '../components/elements/OutlawMinter';
 import FooterArea from '../components/layouts/FooterArea';
 import HeaderBar from '../components/layouts/HeaderBar';
 import { ADDRESS_BANDIT, ADDRESS_OUTLAWS_NFT } from '../constants/addresses';
@@ -80,7 +79,17 @@ export default function Home() {
         >
           RECRUIT OUTLAWS
         </Typography>
-        <OutlawMinter nftId={outlawSupply.toString()} />
+        <Typography sx={{ fontSize: '2em', color: 'black' }}>
+          SOLD OUT
+        </Typography>
+        <Typography sx={{ fontSize: '1em', color: 'black' }}>
+          As of September 9, 2023, all 100 Outlaws were minted by burning BANDIT
+          tokens. You can now trade Outlaws on secondary markets using the NFT
+          contract address: `0x128Bf3854130B8cD23e171041Fc65DeE43a1c194`. Or,
+          you can visit https://t.me/banditlsdt and ask for direct OTC trades
+          with community members.git
+        </Typography>
+        {/*<OutlawMinter nftId={outlawSupply.toString()} />*/}
         <Typography
           as="h2"
           sx={{
