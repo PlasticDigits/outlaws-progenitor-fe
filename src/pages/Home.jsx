@@ -3,9 +3,7 @@ import { Typography } from '@mui/material';
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Unstable_Grid2'; // Grid version 2
 import { parseEther } from 'ethers/lib/utils.js';
-import { useAccount, useBalance, useContractRead } from 'wagmi';
-import IERC20Abi from '../abi/IERC20.json';
-import IERC721EnumerableAbi from '../abi/IERC721Enumerable.json';
+import { useAccount, useBalance } from 'wagmi';
 import OutlawDisplay from '../components/elements/OutlawDisplay';
 import FooterArea from '../components/layouts/FooterArea';
 import HeaderBar from '../components/layouts/HeaderBar';
@@ -13,15 +11,10 @@ import { ADDRESS_BANDIT, ADDRESS_OUTLAWS_NFT } from '../constants/addresses';
 import useAccountNfts from '../hooks/useAccountNfts';
 import { bnToCompact } from '../utils/bnToFixed';
 
-const banditContract = {
-  address: ADDRESS_BANDIT,
-  abi: IERC20Abi,
-};
-
 export default function Home() {
   const theme = useTheme();
 
-  const { address, isConnecting, isDisconnected } = useAccount();
+  const { address } = useAccount();
 
   const {
     data: banditBalData,
@@ -36,22 +29,6 @@ export default function Home() {
   const banditBal =
     !banditBalIsLoading && !banditBalIsError
       ? banditBalData?.value
-      : parseEther('0');
-
-  const {
-    data: outlawSupplyData,
-    isError: outlawSupplyIsError,
-    isLoading: outlawSupplyIsLoading,
-  } = useContractRead({
-    address: ADDRESS_OUTLAWS_NFT,
-    abi: IERC721EnumerableAbi,
-    functionName: 'totalSupply',
-    watch: true,
-  });
-
-  const outlawSupply =
-    !outlawSupplyIsLoading && !outlawSupplyIsError
-      ? outlawSupplyData
       : parseEther('0');
 
   const outlawNftIds = useAccountNfts(ADDRESS_OUTLAWS_NFT);
@@ -113,7 +90,7 @@ export default function Home() {
         >
           {!!outlawNftIds &&
             outlawNftIds.accountNftIdArray.length > 0 &&
-            [...outlawNftIds.accountNftIdArray].map((val, i) => (
+            [...outlawNftIds.accountNftIdArray].map((val) => (
               <OutlawDisplay key={val.toString()} nftId={val.toString()} />
             ))}
         </Box>
